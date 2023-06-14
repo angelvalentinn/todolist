@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;900&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --clr-body: #374259;
+    --clr-p: #AA77FF;
+    --clr-s: #8862c4;
+    --clr-w: #eee;
+    --clr-b: #222;
+}
+
+body {
+    background-color: var(--clr-body);
+    color: var(--clr-w);
+    font-family: 'Poppins', sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    position: relative;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    width: 100%;
+}
+
+.header {
+    position: relative;
+}
+
+.title {
+    font-size: 4rem;
+    opacity: 0.5;
+    color: rgba(0, 0, 0, .2);
+    text-transform: uppercase;
+    position: relative;
+}
+
+.msg-error {
+    font-size: 0.8rem;
+    color: rgb(197, 26, 26);
+    display: none;
+    position: absolute;
+}
+
+.header__entradas {
+    position: absolute;
+    bottom: -0.2rem;
+}
+
+#entrada {
+    border: none;
+    outline: none;
+    padding: .5rem;
+    background-color: inherit;
+    border-bottom: 2px solid var(--clr-s);
+    color: var(--clr-w);
+}
+
+#enviar {
+    border: none;
+
+    background-color: inherit;
+    text-transform: uppercase;
+    font-weight: 900;
+    background-image: linear-gradient(to right, var(--clr-p), #e131cd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    cursor: pointer;
+    position: relative;
+    padding-top: .3rem;
+    transition: .4s ease;
+}
+
+#enviar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    border-top: 2px solid var(--clr-s);
+}
+
+#enviar:hover {
+    padding-top: 0;
+    padding-bottom: .55rem;
+}
+
+#enviar:hover::before {
+    border-bottom: 2px solid var(--clr-s);
+    border-top: none;
+}
+
+.todolist {
+    display: flex;
+    flex-direction: column;
+}
+
+.subtitle {
+    font-size: 2rem;
+    opacity: .5;
+    color: rgba(0, 0, 0, .2);
+    text-transform: uppercase;
+    font-weight: 900;
+    position: relative;
+}
+
+
+.tareas {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.tarea {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, .2);
+    color: var(--clr-w);
+    padding: 1rem .5rem;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 1rem;
+    position: relative;
+}   
+
+.tarea__title {
+    border: none;
+    outline:none;
+    color: var(--clr-w);
+    background-color: transparent;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    width: 140%;
+}
+
+.id {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: -3px;
+    right: 2px;
+    font-size: .4rem;
+    border-radius: 50%;
+    height: 15px;
+    width: 15px;
+    background-color: var(--clr-b);
+}
+
+.btns {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 1rem;
+    padding-left: 1rem;
+    width: 60%;
+}
+
+.editar,
+.eliminar,
+.guardar {
+    border: none;
+    background-color: inherit;
+    font-weight: 900;
+    text-transform: uppercase;
+    font-size: .8rem;
+    cursor: pointer;
+}
+
+.editar,
+.guardar {
+    background-image: linear-gradient(to right, var(--clr-p), #bd30ac);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.eliminar {
+    color: rgb(212, 28, 28);
+}
+
+@media screen and (min-width: 768px) {
+    .title {
+        font-size: 6rem;
+        letter-spacing: .6rem;
+    }
+
+    .tarea__title {
+        width: 100%;
+    }
+
+    .btns {
+        width: 30%;
+        flex-wrap: nowrap;
+    }
+
+    #entrada {
+        padding: .5rem;
+        width: 400px;
+        background-color: inherit;
+        font-size: 1.3rem;
+        border-bottom: 2px solid var(--clr-s);
+    }
+
+    #enviar {
+        border: none;
+        background-color: inherit;
+        text-transform: uppercase;
+        font-weight: 900;
+        background-image: linear-gradient(to right, var(--clr-p), #e131cd);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        cursor: pointer;
+        position: relative;
+        padding-top: .3rem;
+        font-size: 1.3rem;
+    }
+
+    .subtitle {
+        font-size: 2.5rem;
+    }
+}
